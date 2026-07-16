@@ -147,7 +147,7 @@ a{ text-decoration:none; color:inherit; }
 }
 .sw-fv-inner{ position:relative; z-index:2; text-align:center; }
 .sw-fv-eyebrow{
-  font-family:"Fredoka",sans-serif; font-weight:700;
+  font-family:"Noto Sans JP",sans-serif; font-weight:900;
   font-size:clamp(28px, 8vw, 46px);
   letter-spacing:0; color:rgba(255,255,255,.95); margin:0 -20px 18px; padding:0 10px;
   text-shadow:0 2px 8px rgba(20,80,110,.3); line-height:1.08; word-break:keep-all;
@@ -170,12 +170,6 @@ a{ text-decoration:none; color:inherit; }
   text-shadow:0 4px 18px rgba(255,199,44,.35);
   position:relative;
 }
-.sw-fv-num::after{
-  content:''; position:absolute; inset:0; background:linear-gradient(120deg, transparent 30%, rgba(255,255,255,.75) 48%, transparent 62%);
-  background-size:220% 100%; background-position:150% 0; mix-blend-mode:overlay;
-}
-.sw-fv-num-block.is-shine .sw-fv-num::after{ animation:sw-shine 1.7s ease-in-out; }
-@keyframes sw-shine{ from{ background-position:150% 0; } to{ background-position:-60% 0; } }
 .sw-fv-num-percent{ font-size:.42em; vertical-align:.5em; margin-left:1px; }
 .sw-fv-num-label{ font-size:.68rem; font-weight:700; color:rgba(255,255,255,.95); line-height:1.4; margin-top:2px; }
 .sw-fv-num-x{ font-family:"Fredoka",sans-serif; font-weight:500; font-size:1.4rem; color:rgba(255,255,255,.7); }
@@ -679,7 +673,7 @@ a{ text-decoration:none; color:inherit; }
   <section class="sw-event" id="block8">
     <span class="sw-eyebrow">31 DAYS EVENT</span>
     <h2 class="sw-event-title">31日だから、<span class="sw-num">31</span>％OFF。</h2>
-    <p class="sw-event-text">7月31日は「31日のサワイ」。<br>夏本番を迎える今、澤井珈琲の水出し珈琲を、1日限定の特別価格でご用意しました。<br>50袋入りの大容量セットを、31％OFFクーポンでお求めいただけます。</p>
+    <p class="sw-event-text">7月31日は「31日のサワイの日」。<br>夏本番を迎える今、澤井珈琲の水出し珈琲を、1日限定の特別価格でご用意しました。<br>50袋入りの大容量セットを、31％OFFクーポンでお求めいただけます。</p>
 
     <div class="sw-event-facts">
       <div class="sw-event-fact full">
@@ -874,21 +868,14 @@ setInterval(updateCountdown, 1000);
 
 /* ===================== FV全体がキラリと光る演出 ===================== */
 (function(){
-  const blocks = [document.getElementById('swNumBlock31'), document.getElementById('swNumBlock50')];
   const fvShine = document.getElementById('swFvShine');
-  function shine(i){
-    const el = blocks[i % blocks.length];
-    el.classList.remove('is-shine');
-    void el.offsetWidth;
-    el.classList.add('is-shine');
-
+  function shine(){
     fvShine.classList.remove('is-play');
     void fvShine.offsetWidth;
     fvShine.classList.add('is-play');
   }
-  let i = 0;
-  setInterval(()=>{ shine(i); i++; }, 3200);
-  shine(0);
+  setInterval(shine, 3200);
+  shine();
 })();
 </script>
 </body>
