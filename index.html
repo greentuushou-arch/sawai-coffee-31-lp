@@ -34,7 +34,7 @@
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; font-size:130%; }
 body{
-  margin:0; background:#C81E1E; color:var(--ink);
+  margin:0; background:var(--yellow-400); color:var(--ink);
   font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif;
   -webkit-font-smoothing:antialiased;
 }
@@ -45,10 +45,10 @@ a{ text-decoration:none; color:inherit; }
 /* ===================== 背景(水色グラデ+水しぶきパターン) ===================== */
 .sw-bg-pattern{
   position:fixed; inset:0; z-index:-1;
-  background:linear-gradient(180deg, #E8382B 0%, #D42A22 45%, #B3241C 100%);
+  background:linear-gradient(180deg, #FFD866 0%, #FFC72C 45%, #F2A900 100%);
 }
 .sw-bg-pattern::before{
-  content:''; position:absolute; inset:0; opacity:.55;
+  content:''; position:absolute; inset:0; opacity:.5;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'%3E%3Cpath d='M0 20 Q30 0 60 20 T120 20' fill='none' stroke='%23ffffff' stroke-width='2' opacity='0.6'/%3E%3Cpath d='M0 32 Q30 12 60 32 T120 32' fill='none' stroke='%23ffffff' stroke-width='2' opacity='0.4'/%3E%3C/svg%3E");
   background-repeat:repeat; background-size:120px 40px;
 }
