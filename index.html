@@ -115,6 +115,14 @@ a{ text-decoration:none; color:inherit; }
 
 /* ===================== ファーストビュー(画像) ===================== */
 .sw-hero-img-frame{ position:relative; overflow:hidden; background:var(--coffee-100); }
+.sw-hero-confetti{ position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:3; }
+.sw-confetti-piece{ position:absolute; top:-20px; opacity:0; will-change:transform,opacity; }
+.sw-hero-confetti.is-play .sw-confetti-piece{ animation-name:sw-confetti-fall; animation-timing-function:ease-in; animation-fill-mode:forwards; }
+@keyframes sw-confetti-fall{
+  0%{ transform:translate(0,0) rotate(0deg); opacity:1; }
+  85%{ opacity:1; }
+  100%{ transform:translate(var(--sw-drift),var(--sw-fall)) rotate(var(--sw-rot)); opacity:0; }
+}
 .sw-hero-img-frame .sw-hero-img-sp{ width:100%; aspect-ratio:4/5; object-fit:cover; }
 .sw-hero-img-frame .sw-hero-img-pc{ display:none; }
 .sw-hero-note-wrap{ padding:20px 22px 28px; text-align:center; background:var(--coffee-900); }
@@ -320,10 +328,11 @@ a{ text-decoration:none; color:inherit; }
     <div class="sw-hero-img-frame">
       <img src="images/hero/fv-sp.jpg" alt="120杯分の涼しさ、まとめてどうぞ。7月31日は31日のサワイ。ポイント2倍・1,500円クーポン" class="sw-hero-img-sp">
       <img src="images/hero/fv-pc.jpg" alt="120杯分の涼しさ、まとめてどうぞ。7月31日は31日のサワイ。ポイント2倍・1,500円クーポン" class="sw-hero-img-pc">
+      <div class="sw-hero-confetti" id="swHeroConfetti" aria-hidden="true"></div>
     </div>
     <div class="sw-hero-note-wrap">
       <div class="sw-countdown">
-        <p class="sw-countdown-label" id="swCdLabel">31日のサワイ開始まで</p>
+        <p class="sw-countdown-label" id="swCdLabel">31日のサワイの日開始まで</p>
         <div class="sw-countdown-timer" id="swCdTimer">--<span class="sw-cd-unit">日</span>--<span class="sw-cd-unit">時間</span></div>
       </div>
       <a href="#" class="sw-coupon-btn sw-coupon-btn-lg" data-coupon>1,500円クーポンを獲得する</a>
@@ -344,24 +353,10 @@ a{ text-decoration:none; color:inherit; }
     </div>
   </section>
 
-  <div class="sw-band sw-band-ice">120杯分の涼しさを、31日のサワイで。</div>
-
-  <!-- ============================================================
-       ブロック2：普段の冷蔵庫に、澤井の水出しを
-       ============================================================ -->
-  <section class="sw-block sw-block-ice" id="block2">
-    <div class="sw-inner">
-      <span class="sw-eyebrow">EVERYDAY HABIT</span>
-      <h2 class="sw-block-title">普段の冷蔵庫に<br>澤井の水出しを</h2>
-      <p class="sw-block-text">毎日の一杯を、市販ボトルから水出しパックに変えるだけ。無理なく、専門店の香りと味わいを習慣にできます。</p>
-      <a href="#" class="sw-coupon-btn" data-coupon>お買い物前にクーポンを獲得</a>
-    </div>
-  </section>
-
   <!-- ============================================================
        ブロック3：78%が最高評価！リピートが続く理由があります
        ============================================================ -->
-  <section class="sw-block sw-block-white" id="block3">
+  <section class="sw-block sw-block-ice" id="block3">
     <div class="sw-inner">
       <span class="sw-eyebrow">REVIEW</span>
       <h2 class="sw-block-title">総合評価4.7<br>リピートが続く<br>理由があります</h2>
@@ -378,7 +373,7 @@ a{ text-decoration:none; color:inherit; }
   <!-- ============================================================
        こんな方におすすめ(レビューブロックの下に配置)
        ============================================================ -->
-  <section class="sw-block sw-block-ice" id="block-recommend">
+  <section class="sw-block sw-block-white" id="block-recommend">
     <div class="sw-inner">
       <span class="sw-eyebrow">FOR YOU</span>
       <h2 class="sw-block-title">ひとつでも<br>当てはまったら<br>この夏のストックに</h2>
@@ -401,7 +396,7 @@ a{ text-decoration:none; color:inherit; }
   <!-- ============================================================
        ブロック4：じっくり抽出で深い味わいが広がる
        ============================================================ -->
-  <section class="sw-block sw-block-white" id="block4">
+  <section class="sw-block sw-block-ice" id="block4">
     <div class="sw-inner">
       <span class="sw-eyebrow">SLOW BREW</span>
       <h2 class="sw-block-title">じっくり抽出で<br>深い味わいが広がる</h2>
@@ -412,7 +407,7 @@ a{ text-decoration:none; color:inherit; }
   <!-- ============================================================
        ブロック5：技術も道具も不要。ポンッと入れて待つだけ
        ============================================================ -->
-  <section class="sw-block sw-block-ice" id="block5">
+  <section class="sw-block sw-block-white" id="block5">
     <div class="sw-inner">
       <span class="sw-eyebrow">SO EASY</span>
       <h2 class="sw-block-title">ポンッと入れるだけで<br>120杯分の<br>本格コールドブリュー</h2>
@@ -426,7 +421,7 @@ a{ text-decoration:none; color:inherit; }
   <!-- ============================================================
        ブロック6：パックを入れて冷やすだけ！失敗知らずの3ステップ
        ============================================================ -->
-  <section class="sw-block sw-block-white" id="block6">
+  <section class="sw-block sw-block-ice" id="block6">
     <div class="sw-inner">
       <span class="sw-eyebrow">3 STEPS</span>
       <h2 class="sw-block-title">パックを入れて<br>冷やすだけ！<br>失敗知らずの3ステップ</h2>
@@ -463,7 +458,7 @@ a{ text-decoration:none; color:inherit; }
   <!-- ============================================================
        ブロック8：焙煎したてを直接お届け！鮮度も香りもそのままに
        ============================================================ -->
-  <section class="sw-block sw-block-ice" id="block8">
+  <section class="sw-block sw-block-white" id="block8">
     <div class="sw-inner">
       <span class="sw-eyebrow">FRESH ROAST</span>
       <h2 class="sw-block-title">焙煎したてを<br>直接お届け！<br>鮮度も香りもそのままに</h2>
@@ -605,14 +600,14 @@ function updateCountdown(){
     const diff = CAMPAIGN_START - now;
     const days = Math.floor(diff / 86400000);
     const hours = Math.floor((diff % 86400000) / 3600000);
-    label.textContent = '31日のサワイ開始まで';
+    label.textContent = '31日のサワイの日開始まで';
     timer.innerHTML = `${days}<span class="sw-cd-unit">日</span>${pad(hours)}<span class="sw-cd-unit">時間</span>`;
   }else if(now >= CAMPAIGN_START && now <= CAMPAIGN_END){
     const diff = CAMPAIGN_END - now;
     const hours = Math.floor(diff / 3600000);
     const mins = Math.floor((diff % 3600000) / 60000);
     const secs = Math.floor((diff % 60000) / 1000);
-    label.textContent = '特典終了まで';
+    label.textContent = '31日のサワイの日終了まで';
     timer.innerHTML = `${pad(hours)}<span class="sw-cd-unit">時間</span>${pad(mins)}<span class="sw-cd-unit">分</span>${pad(secs)}<span class="sw-cd-unit">秒</span>`;
   }else{
     document.querySelector('.sw-countdown').style.display = 'none';
@@ -639,6 +634,52 @@ setInterval(updateCountdown, 1000);
     ? `目標${SOLD_TARGET.toLocaleString()}個まで、あと${remain.toLocaleString()}個`
     : `目標${SOLD_TARGET.toLocaleString()}個を達成しました！`;
   document.getElementById('swSoldBar').style.width = Math.min(100, (SOLD_COUNT / SOLD_TARGET) * 100) + '%';
+})();
+
+/* ===================== FVの紙吹雪バースト演出 ===================== */
+(function(){
+  const layer = document.getElementById('swHeroConfetti');
+  if(!layer){ return; }
+
+  const colors = ['#E8382B', '#FFC72C', '#66CCFF', '#FFFFFF', '#C81E1E'];
+  const count = 28;
+
+  function burst(){
+    const frameHeight = layer.parentElement.offsetHeight;
+    layer.innerHTML = '';
+    layer.classList.remove('is-play');
+
+    for(let i = 0; i < count; i++){
+      const piece = document.createElement('span');
+      piece.className = 'sw-confetti-piece';
+      const isRibbon = Math.random() < 0.35;
+      const size = isRibbon ? (3 + Math.random() * 2) : (6 + Math.random() * 6);
+      piece.style.width = size + 'px';
+      piece.style.height = (isRibbon ? size * 4 : size) + 'px';
+      piece.style.borderRadius = '2px';
+      piece.style.left = (Math.random() * 100) + '%';
+      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+      piece.style.animationDuration = (1.6 + Math.random() * 1.2) + 's';
+      piece.style.animationDelay = (Math.random() * 0.7) + 's';
+      piece.style.setProperty('--sw-fall', (frameHeight * 0.75 + Math.random() * frameHeight * 0.35) + 'px');
+      piece.style.setProperty('--sw-drift', (Math.random() * 100 - 50) + 'px');
+      piece.style.setProperty('--sw-rot', (360 + Math.random() * 360) + 'deg');
+      layer.appendChild(piece);
+    }
+
+    void layer.offsetWidth;
+    layer.classList.add('is-play');
+  }
+
+  function scheduleNext(){
+    const delay = 5000 + Math.random() * 3000;
+    setTimeout(()=>{ burst(); scheduleNext(); }, delay);
+  }
+
+  window.addEventListener('load', ()=>{
+    burst();
+    scheduleNext();
+  });
 })();
 
 </script>
