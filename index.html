@@ -68,9 +68,6 @@ a{ text-decoration:none; color:inherit; }
 .sw-block-ice .sw-block-lead{ color:var(--white); }
 .sw-block-ice .sw-block-text{ color:var(--white); }
 .sw-block-ice .sw-block-text strong{ color:var(--white); }
-.sw-block-ice .sw-stat-num{ color:var(--white); }
-.sw-block-ice .sw-stat-unit{ color:var(--white); }
-.sw-block-ice .sw-stat-caption{ color:var(--white); }
 .sw-block-ice .sw-stat-note{ color:rgba(255,255,255,.85); }
 
 .sw-eyebrow{
@@ -167,12 +164,8 @@ a{ text-decoration:none; color:inherit; }
 }
 
 /* ===================== 数字強調まとめ ===================== */
-.sw-stat{ text-align:center; margin:26px 0; }
-.sw-stat-num{ font-size:2.6rem; color:var(--ice-600); line-height:1; }
-.sw-stat-unit{ font-size:1rem; font-weight:700; color:var(--coffee-700); margin-left:4px; }
-.sw-review-stars{ color:var(--yellow-400); font-size:1.5rem; letter-spacing:.12em; margin:8px 0 4px; }
-.sw-stat-caption{ font-size:.8rem; color:var(--ink-soft); font-weight:700; margin-top:6px; }
-.sw-stat-note{ font-size:.6rem; color:var(--ink-soft); font-weight:400; margin-top:6px; opacity:.75; }
+.sw-stat-note{ text-align:center; font-size:.6rem; color:var(--ink-soft); font-weight:400; margin:8px 0 0; opacity:.75; }
+.sw-block-photo{ width:100%; border-radius:12px; display:block; margin:20px 0; }
 .sw-btn-review{
   display:block; text-align:center; background:var(--ice-600); color:var(--white);
   font-weight:900; font-size:.9rem; border-radius:999px; padding:15px 20px;
@@ -345,6 +338,7 @@ a{ text-decoration:none; color:inherit; }
     <div class="sw-inner">
       <span class="sw-eyebrow">SOAK & BREW</span>
       <h2 class="sw-block-title">水に浸けるだけで<br>本格アイスコーヒー</h2>
+      <img src="images/product/soak-brew.jpg" alt="水出し珈琲パックをピッチャーに浸けている様子" class="sw-block-photo">
       <p class="sw-block-text">濃厚でまろやか、渋みのない深い水出しコーヒーが簡単に。ポンッと水に浸けるだけで、コクと甘みが広がる癒しの一杯を、家族みんなでお楽しみいただけます。</p>
       <a href="#" class="sw-coupon-btn" data-coupon>7月31日限定 1,500円クーポンを獲得する</a>
     </div>
@@ -370,16 +364,12 @@ a{ text-decoration:none; color:inherit; }
   <section class="sw-block sw-block-white" id="block3">
     <div class="sw-inner">
       <span class="sw-eyebrow">REVIEW</span>
-      <h2 class="sw-block-title">総合評価4.72<br>リピートが続く<br>理由があります</h2>
+      <h2 class="sw-block-title">総合評価4.7<br>リピートが続く<br>理由があります</h2>
 
-      <div class="sw-stat">
-        <span class="sw-num sw-stat-num">4.72</span><span class="sw-stat-unit">/5</span>
-        <div class="sw-review-stars" aria-hidden="true">★★★★★</div>
-        <p class="sw-stat-caption">3,415件のレビューの総合評価<br>(うち78％が★5評価)</p>
-        <p class="sw-stat-note">※2026年7月18日時点</p>
-      </div>
+      <img src="images/product/review.jpg" alt="楽天レビュー3,415件中、★4+★5評価が96%、総合評価4.7点獲得" class="sw-block-photo">
+      <p class="sw-stat-note">※2026年5月時点の楽天レビューデータ</p>
 
-      <p class="sw-block-text">「すっきり美味しい」という声を多数いただき、毎朝の冷たい一杯が、もっと爽やかに変わります。</p>
+      <p class="sw-block-text">「クセがなく飲みやすい」という声を多数いただき、毎朝の冷たい一杯が、もっと爽やかに変わります。</p>
 
       <a href="https://review.rakuten.co.jp/item/1/198667_10002771/1.1/" target="_blank" rel="noopener" class="sw-btn-review">レビューを見に行く</a>
     </div>
