@@ -35,7 +35,7 @@
 *{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; font-size:130%; }
 body{
-  margin:0; background:var(--yellow-400); color:var(--ink);
+  margin:0; background:#BFE6F5; color:var(--ink);
   font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Hiragino Sans",sans-serif;
   -webkit-font-smoothing:antialiased;
 }
@@ -46,12 +46,12 @@ a{ text-decoration:none; color:inherit; }
 /* ===================== 背景(水色グラデ+水しぶきパターン) ===================== */
 .sw-bg-pattern{
   position:fixed; inset:0; z-index:-1;
-  background:linear-gradient(180deg, #FFD866 0%, #FFC72C 45%, #F2A900 100%);
+  background:linear-gradient(180deg, #EAF7FC 0%, #BFE6F5 45%, #8FD3EE 100%);
 }
 .sw-bg-pattern::before{
-  content:''; position:absolute; inset:0; opacity:.5;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='40' viewBox='0 0 120 40'%3E%3Cpath d='M0 20 Q30 0 60 20 T120 20' fill='none' stroke='%23ffffff' stroke-width='2' opacity='0.6'/%3E%3Cpath d='M0 32 Q30 12 60 32 T120 32' fill='none' stroke='%23ffffff' stroke-width='2' opacity='0.4'/%3E%3C/svg%3E");
-  background-repeat:repeat; background-size:120px 40px;
+  content:''; position:absolute; inset:0; opacity:.7;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Ccircle cx='20' cy='30' r='6' fill='white' opacity='0.5'/%3E%3Ccircle cx='70' cy='15' r='3' fill='white' opacity='0.4'/%3E%3Ccircle cx='120' cy='40' r='9' fill='white' opacity='0.35'/%3E%3Ccircle cx='45' cy='80' r='4' fill='white' opacity='0.5'/%3E%3Ccircle cx='100' cy='95' r='7' fill='white' opacity='0.4'/%3E%3Ccircle cx='140' cy='110' r='3' fill='white' opacity='0.55'/%3E%3Ccircle cx='15' cy='125' r='5' fill='white' opacity='0.45'/%3E%3Ccircle cx='65' cy='140' r='8' fill='white' opacity='0.3'/%3E%3Ccircle cx='130' cy='150' r='4' fill='white' opacity='0.5'/%3E%3Ccircle cx='90' cy='50' r='2.5' fill='white' opacity='0.6'/%3E%3C/svg%3E");
+  background-repeat:repeat; background-size:160px 160px;
 }
 
 /* ===================== 全体レイアウト ===================== */
@@ -164,6 +164,12 @@ a{ text-decoration:none; color:inherit; }
 .sw-stat-unit{ font-size:1rem; font-weight:700; color:var(--coffee-700); margin-left:4px; }
 .sw-review-stars{ color:var(--yellow-400); font-size:1.5rem; letter-spacing:.12em; margin:8px 0 4px; }
 .sw-stat-caption{ font-size:.8rem; color:var(--ink-soft); font-weight:700; margin-top:6px; }
+.sw-stat-note{ font-size:.6rem; color:var(--ink-soft); font-weight:400; margin-top:6px; opacity:.75; }
+.sw-btn-review{
+  display:block; text-align:center; background:var(--ice-600); color:var(--white);
+  font-weight:900; font-size:.9rem; border-radius:999px; padding:15px 20px;
+  max-width:420px; margin:26px auto 0; box-shadow:0 6px 16px rgba(31,143,196,.35);
+}
 
 /* ===================== 個包装アイコン列 ===================== */
 .sw-feature-list{ display:flex; flex-direction:column; gap:10px; margin:22px 0; }
@@ -265,7 +271,10 @@ a{ text-decoration:none; color:inherit; }
   width:100%; max-width:750px; background:var(--coffee-900); padding:10px 16px;
   box-shadow:0 -4px 18px rgba(0,0,0,.2);
 }
-.sw-sticky-cta .sw-coupon-btn{ margin:0; font-size:.88rem; padding:14px; }
+.sw-sticky-cta .sw-coupon-btn{
+  margin:0; font-size:.88rem; padding:12px;
+  background:transparent; border:2px solid var(--white); box-shadow:none;
+}
 
 /* ===================== SVGアイコン共通 ===================== */
 .sw-icon-svg{ width:100%; height:100%; }
@@ -360,11 +369,12 @@ a{ text-decoration:none; color:inherit; }
         <span class="sw-num sw-stat-num">4.72</span><span class="sw-stat-unit">/5</span>
         <div class="sw-review-stars" aria-hidden="true">★★★★★</div>
         <p class="sw-stat-caption">3,415件のレビューの総合評価<br>(うち78％が★5評価)</p>
+        <p class="sw-stat-note">※2026年7月18日時点</p>
       </div>
 
       <p class="sw-block-text">「すっきり美味しい」という声を多数いただき、毎朝の冷たい一杯が、もっと爽やかに変わります。</p>
 
-      <a href="#" class="sw-coupon-btn" data-coupon>40パック入りをクーポンでお得に購入する</a>
+      <a href="https://review.rakuten.co.jp/item/1/198667_10002771/1.1/" target="_blank" rel="noopener" class="sw-btn-review">レビューを見に行く</a>
     </div>
   </section>
 
