@@ -62,6 +62,16 @@ a{ text-decoration:none; color:inherit; }
 .sw-inner{ padding:56px 22px; max-width:520px; margin:0 auto; }
 .sw-block-white{ background:#FFFFCC; }
 .sw-block-ice{ background:#66CCFF; }
+.sw-block-ice .sw-eyebrow{ color:var(--white); }
+.sw-block-ice .sw-eyebrow::before,.sw-block-ice .sw-eyebrow::after{ background:rgba(255,255,255,.6); }
+.sw-block-ice .sw-block-title{ color:var(--white); }
+.sw-block-ice .sw-block-lead{ color:var(--white); }
+.sw-block-ice .sw-block-text{ color:var(--white); }
+.sw-block-ice .sw-block-text strong{ color:var(--white); }
+.sw-block-ice .sw-stat-num{ color:var(--white); }
+.sw-block-ice .sw-stat-unit{ color:var(--white); }
+.sw-block-ice .sw-stat-caption{ color:var(--white); }
+.sw-block-ice .sw-stat-note{ color:rgba(255,255,255,.85); }
 
 .sw-eyebrow{
   display:flex; align-items:center; justify-content:center; gap:10px;
@@ -129,10 +139,10 @@ a{ text-decoration:none; color:inherit; }
   background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.4);
   border-radius:999px; padding:5px 12px; font-size:.68rem; font-weight:700; color:var(--white);
 }
-.sw-price-row{ display:flex; align-items:baseline; justify-content:center; gap:10px; flex-wrap:wrap; }
+.sw-price-row{ display:flex; align-items:baseline; justify-content:center; gap:6px; flex-wrap:wrap; }
 .sw-price-before{ font-size:1rem; font-family:"Noto Sans JP",sans-serif; font-weight:700; color:rgba(255,255,255,.8); text-decoration:line-through; }
 .sw-price-arrow{ color:rgba(255,255,255,.9); font-size:1.3rem; font-weight:700; }
-.sw-price-after{ font-size:2.5rem; font-weight:900; color:var(--white); font-family:"Noto Sans JP",sans-serif; }
+.sw-price-after{ font-size:2.5rem; font-weight:900; color:var(--white); font-family:"Noto Sans JP",sans-serif; white-space:nowrap; }
 .sw-price-after .sw-num{ font-family:"Josefin Sans",sans-serif; font-weight:700; }
 .sw-price-off{
   display:inline-block; background:var(--red-500); color:var(--white); font-family:"Noto Sans JP",sans-serif;
@@ -246,7 +256,7 @@ a{ text-decoration:none; color:inherit; }
 .sw-final .sw-block-text strong{ color:var(--white); }
 .sw-final-offer{
   background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.16); border-radius:14px;
-  padding:22px; margin:24px 0; text-align:center;
+  padding:22px 12px; margin:24px 0; text-align:center;
 }
 .sw-final-offer-name{ font-weight:900; font-size:.94rem; margin-bottom:10px; }
 .sw-final-offer-price{ margin-bottom:6px; }
@@ -363,7 +373,7 @@ a{ text-decoration:none; color:inherit; }
   <section class="sw-block sw-block-white" id="block3">
     <div class="sw-inner">
       <span class="sw-eyebrow">REVIEW</span>
-      <h2 class="sw-block-title">総合評価4.72<br>リピートが続く理由があります</h2>
+      <h2 class="sw-block-title">総合評価4.72<br>リピートが続く<br>理由があります</h2>
 
       <div class="sw-stat">
         <span class="sw-num sw-stat-num">4.72</span><span class="sw-stat-unit">/5</span>
@@ -384,7 +394,7 @@ a{ text-decoration:none; color:inherit; }
   <section class="sw-block sw-block-ice" id="block-recommend">
     <div class="sw-inner">
       <span class="sw-eyebrow">FOR YOU</span>
-      <h2 class="sw-block-title">ひとつでも当てはまったら<br>この夏のストックに</h2>
+      <h2 class="sw-block-title">ひとつでも<br>当てはまったら<br>この夏のストックに</h2>
 
       <div class="sw-check-list">
         <div class="sw-check-item"><span class="sw-check-icon"><svg class="sw-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></svg></span>毎朝アイスコーヒーを飲む</div>
@@ -418,7 +428,7 @@ a{ text-decoration:none; color:inherit; }
   <section class="sw-block sw-block-ice" id="block5">
     <div class="sw-inner">
       <span class="sw-eyebrow">SO EASY</span>
-      <h2 class="sw-block-title">ポンッと入れるだけで<br>120杯分の本格コールドブリュー</h2>
+      <h2 class="sw-block-title">ポンッと入れるだけで<br>120杯分の<br>本格コールドブリュー</h2>
       <p class="sw-block-text">水にポンッと入れて、あとは待つだけ。技術も道具も必要なし、誰でも手軽に専門店のようなまろやかアイスコーヒーが完成します。専用ピッチャーや容器にパックを1つ入れて冷やせば、場所を取らずいつでも新鮮な水出しコーヒーを楽しめます。忙しい朝も、帰宅後のひとときも、注ぐだけで本格的な味わいが待っています。</p>
       <a href="#" class="sw-coupon-btn" data-coupon>120杯分の涼しさをお得に購入する</a>
     </div>
@@ -432,7 +442,7 @@ a{ text-decoration:none; color:inherit; }
   <section class="sw-block sw-block-white" id="block6">
     <div class="sw-inner">
       <span class="sw-eyebrow">3 STEPS</span>
-      <h2 class="sw-block-title">パックを入れて冷やすだけ！<br>失敗知らずの3ステップ</h2>
+      <h2 class="sw-block-title">パックを入れて<br>冷やすだけ！<br>失敗知らずの3ステップ</h2>
 
       <div class="sw-steps">
         <div class="sw-step">
@@ -469,7 +479,7 @@ a{ text-decoration:none; color:inherit; }
   <section class="sw-block sw-block-ice" id="block8">
     <div class="sw-inner">
       <span class="sw-eyebrow">FRESH ROAST</span>
-      <h2 class="sw-block-title">焙煎したてを直接お届け！<br>鮮度も香りもそのままに</h2>
+      <h2 class="sw-block-title">焙煎したてを<br>直接お届け！<br>鮮度も香りもそのままに</h2>
       <p class="sw-block-text">自社焙煎工場から直送することで余計な中間コストをカット。鮮度が高く香り豊かな状態でお手元に届くから、毎日続けられるお手頃価格を実現しました。</p>
     </div>
   </section>
