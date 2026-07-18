@@ -170,7 +170,7 @@ a{ text-decoration:none; color:inherit; }
 .sw-coupon-btn.is-ended{
   animation:none; background:#B9AFA3; box-shadow:none; pointer-events:none;
 }
-.sw-coupon-img-link{ display:block; max-width:420px; margin:26px auto 0; }
+.sw-coupon-img-link{ display:block; width:calc(100% + 44px); margin:26px -22px 0; }
 .sw-coupon-img-link img{ width:100%; display:block; }
 .sw-coupon-img-link.is-ended{ pointer-events:none; opacity:.5; }
 
@@ -295,6 +295,7 @@ a{ text-decoration:none; color:inherit; }
 
 @media screen and (min-width:768px){
   .sw-inner{ padding:72px 32px; max-width:600px; }
+  .sw-coupon-img-link{ width:calc(100% + 64px); margin-left:-32px; margin-right:-32px; }
   .sw-hero-img-frame .sw-hero-img-sp{ display:none; }
   .sw-hero-img-frame .sw-hero-img-pc{ display:block; width:100%; height:auto; }
   .sw-block-title{ font-size:1.85rem; }
