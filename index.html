@@ -157,7 +157,7 @@ a{ text-decoration:none; color:inherit; }
 /* ===================== クーポンボタン ===================== */
 .sw-coupon-btn{
   display:block; text-align:center; background:linear-gradient(135deg, var(--red-600), var(--red-500));
-  color:var(--white); font-weight:900; font-size:.94rem; border-radius:999px;
+  color:var(--white); font-weight:500; font-size:.94rem; border-radius:999px;
   padding:16px 20px; box-shadow:0 8px 22px rgba(200,30,30,.4);
   position:relative; animation:sw-pulse 2.6s ease-in-out infinite;
 }
@@ -170,20 +170,16 @@ a{ text-decoration:none; color:inherit; }
 .sw-coupon-btn.is-ended{
   animation:none; background:#B9AFA3; box-shadow:none; pointer-events:none;
 }
-.sw-coupon-img-link{
-  display:block; max-width:420px; margin:26px auto 0; border-radius:14px; overflow:hidden;
-  box-shadow:0 8px 22px rgba(200,30,30,.35); position:relative;
-  animation:sw-pulse 2.6s ease-in-out infinite;
-}
+.sw-coupon-img-link{ display:block; max-width:420px; margin:26px auto 0; }
 .sw-coupon-img-link img{ width:100%; display:block; }
-.sw-coupon-img-link.is-ended{ animation:none; box-shadow:none; pointer-events:none; opacity:.5; }
+.sw-coupon-img-link.is-ended{ pointer-events:none; opacity:.5; }
 
 /* ===================== 数字強調まとめ ===================== */
 .sw-stat-note{ text-align:center; font-size:.6rem; color:var(--ink-soft); font-weight:400; margin:8px 0 0; opacity:.75; }
 .sw-block-photo{ width:100%; border-radius:12px; display:block; margin:20px 0; }
 .sw-btn-review{
   display:block; text-align:center; background:var(--ice-600); color:var(--white);
-  font-weight:900; font-size:.9rem; border-radius:999px; padding:15px 20px;
+  font-weight:500; font-size:.9rem; border-radius:999px; padding:15px 20px;
   max-width:420px; margin:26px auto 0; box-shadow:0 6px 16px rgba(31,143,196,.35);
 }
 
@@ -271,7 +267,7 @@ a{ text-decoration:none; color:inherit; }
 .sw-final-offer-tags{ display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-top:12px; }
 .sw-btn-secondary{
   display:block; text-align:center; border:1px solid rgba(255,255,255,.4); color:var(--white);
-  font-weight:700; font-size:.86rem; border-radius:999px; padding:14px 20px; margin-top:12px;
+  font-weight:500; font-size:.86rem; border-radius:999px; padding:14px 20px; margin-top:12px;
   max-width:420px; margin-left:auto; margin-right:auto;
 }
 
