@@ -170,6 +170,13 @@ a{ text-decoration:none; color:inherit; }
 .sw-coupon-btn.is-ended{
   animation:none; background:#B9AFA3; box-shadow:none; pointer-events:none;
 }
+.sw-coupon-img-link{
+  display:block; max-width:420px; margin:26px auto 0; border-radius:14px; overflow:hidden;
+  box-shadow:0 8px 22px rgba(200,30,30,.35); position:relative;
+  animation:sw-pulse 2.6s ease-in-out infinite;
+}
+.sw-coupon-img-link img{ width:100%; display:block; }
+.sw-coupon-img-link.is-ended{ animation:none; box-shadow:none; pointer-events:none; opacity:.5; }
 
 /* ===================== 数字強調まとめ ===================== */
 .sw-stat-note{ text-align:center; font-size:.6rem; color:var(--ink-soft); font-weight:400; margin:8px 0 0; opacity:.75; }
@@ -350,7 +357,9 @@ a{ text-decoration:none; color:inherit; }
       <h2 class="sw-block-title">水に浸けるだけで<br>本格アイスコーヒー</h2>
       <img src="images/product/soak-brew.jpg" alt="水出し珈琲パックをピッチャーに浸けている様子" class="sw-block-photo">
       <p class="sw-block-text">濃厚でまろやか、渋みのない深い水出しコーヒーが簡単に。ポンッと水に浸けるだけで、コクと甘みが広がる癒しの一杯を、家族みんなでお楽しみいただけます。</p>
-      <a href="#" class="sw-coupon-btn" data-coupon>7月31日限定 1,500円クーポンを獲得する</a>
+      <a href="#" class="sw-coupon-img-link" data-coupon>
+        <img src="images/product/coupon.png" alt="7月31日限定 1,500円OFFスペシャルクーポン">
+      </a>
     </div>
   </section>
 
@@ -615,7 +624,9 @@ function updateCountdown(){
     document.querySelector('.sw-countdown').style.display = 'none';
     document.querySelectorAll('[data-coupon]').forEach(btn=>{
       btn.classList.add('is-ended');
-      btn.textContent = '受付終了しました';
+      if(!btn.querySelector('img')){
+        btn.textContent = '受付終了しました';
+      }
       btn.removeAttribute('href');
     });
   }
